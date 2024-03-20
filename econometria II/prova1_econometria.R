@@ -26,6 +26,8 @@ monthplot(serie)
 print(c(mean(dados.ts), sd(dados.ts)))
 print(c(min(dados.ts),max(dados.ts)))
 
+
+# informar principais características conforme teoria de série temporal ----
 "
 pelo gráfico ggplot percebe-se que há variância na sua amplitude, indicando que não é estática
 a média da série está em 758.60 e o desvio padrão em 3187.80 empregos
@@ -35,14 +37,10 @@ também percebemos que em geral o segundo semestre tem menos emprego gerado que 
 "
 
 
-#amostras treino e teste ----
-sample <- sample(c(TRUE, FALSE), nrow(df), replace=TRUE, prob=c(0.7,0.3))
-treino <- df[sample,]
-teste <- df[!sample,]
-
-
-# informar principais características conforme teoria de série temporal ----
-
+# amostras treino e teste ----
+sample <- sample(c(TRUE, FALSE), nrow(serie), replace=TRUE, prob=c(0.7,0.3))
+treino <- serie[sample,]
+teste <- serie[!sample,]
 
 
 
